@@ -25,7 +25,7 @@ bun run dev
 
 <p style="text-align: center; margin-bottom: 20px;"><strong>Выбор роли:</strong> Далее вам будет представлен список групп для учеников или потребуется ввести имя преподавателя.</p>
 <p align="center">
-    <img src="https://imgur.com/5utUdJ3.png" alt="select role" style="max-width: 100%; border-radius: 8px;">
+    <blockquote class="imgur-embed-pub" lang="en" data-id="a/lnIm7Ya" data-context="false" ><a href="//imgur.com/a/lnIm7Ya"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </p>
 
 <p style="text-align: center; margin-bottom: 20px;"><strong>Ежедневная рассылка:</strong> Ежедневно на канале появляются посты с расписанием, бот анализирует их и рассылает людям лично.</p>
@@ -44,5 +44,5 @@ bun run dev
 
 <p style="text-align: center; margin-bottom: 20px;"><strong>Настройка оповещений:</strong> Вы всегда можете отписаться от любой из рассылок бота.</p>
 <p align="center">
-    <img src="https://imgur.com/VGwgcLL.png" alt="notification" style="max-width: 100%; border-radius: 8px;">
+    <blockquote class="imgur-embed-pub" lang="en" data-id="a/VGwgcLL" data-context="false" ><a href="//imgur.com/a/VGwgcLL"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </p>
