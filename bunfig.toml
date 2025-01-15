@@ -1,0 +1,3 @@
+preload = [
+    "bun-plugin-glob-import/register"
+]

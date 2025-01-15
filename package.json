@@ -1,0 +1,33 @@
+{
+	"name": "telegram-bot",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --watch ./src/index.ts",
+		"start": "bun run ./src/index.ts",
+		"build": "bun run ./build.ts",
+		"prod": "bun start ./dist/index.js"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/pg": "^8.11.10",
+		"bun-plugin-glob-import": "^1.0.1",
+		"drizzle-kit": "^0.26.2",
+		"tsx": "^4.19.1"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@formkit/tempo": "^0.1.2",
+		"@gramio/auto-retry": "^0.0.3",
+		"@gramio/prompt": "^1.1.4",
+		"dotenv": "^16.4.5",
+		"drizzle-orm": "^0.35.2",
+		"elysia": "^1.1.23",
+		"gramio": "^0.0.51",
+		"pg": "^8.13.0",
+		"postgres": "^3.4.4",
+		"xlsx": "^0.18.5"
+	}
+}
