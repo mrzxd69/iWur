@@ -1,8 +1,7 @@
 import { Bot } from "gramio";
 import { prompt } from "@gramio/prompt";
 import { autoRetry } from "@gramio/auto-retry";
-import { db, users } from "@db/index.ts";
-import { eq } from "drizzle-orm";
+import { shareSchedule } from "@bot/inline/teacher.ts";
 
 const { default: commands } = await import("./commands/**/*.ts");
 
@@ -20,6 +19,7 @@ export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN!)
 
 for (const { default: command } of commands) {
     if (!(command instanceof Function)) continue;
+    bot.group(shareSchedule)
     bot.group(command as (bot: Bot) => Bot);
 }
 

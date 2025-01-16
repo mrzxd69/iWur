@@ -16,7 +16,7 @@ TypeScript Telegram Bot для моего колледжа
 bun install
 ```
 
-Запуск проект
+Запуск проекта
 ```bash [npm]
 bun run dev
 ```
