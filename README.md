@@ -21,6 +21,11 @@ bun install
 bun run dev
 ```
 
+Сборка проекта
+```bash [npm]
+bun run build
+```
+
 ## Обзор
 
 <p style="text-align: center; margin-bottom: 20px;"><strong>Выбор роли:</strong> Далее вам будет представлен список групп для учеников или потребуется ввести имя преподавателя.</p>
