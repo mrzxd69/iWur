@@ -126,7 +126,7 @@ export const proccessJoinedLessons = async (
     if (!lessonData || lessonData.length === 0) return;
 
     let [lesson, subgroup, room, maybeTeacher] = lessonData[0];
-
+    if (group == 'Ю101') console.log(lessonData[0])
     if (maybeTeacher == "Ничего") maybeTeacher = null;
 
     if (maybeTeacher) {

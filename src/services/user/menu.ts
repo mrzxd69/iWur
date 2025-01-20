@@ -33,7 +33,6 @@ export const checkAuth = async (id: number) => {
 export const getTextLessons = async (telegramId: number, date: string) => {
     let text;
     const { group, teacher } = await checkAuth(telegramId);
-
     if (group) {
         const [{ route, course }] = await db
             .select()
@@ -63,6 +62,7 @@ export const getTextLessons = async (telegramId: number, date: string) => {
     }
 
     if (teacher) {
+
         const [{ initials }] = await db
             .select()
             .from(teachers)
@@ -77,7 +77,10 @@ export const getTextLessons = async (telegramId: number, date: string) => {
                     eq(teachers_lessons.date, date)
                 )
             )
-            .orderBy(asc(lessons.count));
+            .orderBy(
+                asc(teachers_lessons.count)
+            );
+
 
         text = genTeacherScheduleText(currentLessons, initials!, date);
     }
@@ -172,6 +175,5 @@ export const genTeacherScheduleText = async (
 
     if (!lessons[0]) text += "Занятий на сегодня нет.";
     if (lessons[0]) text += "Удачных занятий! 👋";
-
     return text;
 }

@@ -37,7 +37,7 @@ export const teachers = pgTable("teachers", {
 export const groups = pgTable("groups", {
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
     route: text(),
-    course: text().unique()
+    course: text()
 });
 
 export const teachers_lessons = pgTable("teachers_lessons", {

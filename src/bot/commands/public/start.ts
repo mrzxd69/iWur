@@ -15,7 +15,7 @@ export default (bot: TBot) => bot
             const text = await getTextLessons(ctx.from?.id || ctx.chat.id, getDayMonth(false)) as string;
 
             return ctx.send(text, {
-                reply_markup: await keyboardMenu(getDayMonth(false)),
+                reply_markup: keyboardMenu(getDayMonth(false)),
                 "parse_mode": "HTML"
             });
         }

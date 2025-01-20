@@ -9,7 +9,7 @@ import { getDayMonth } from "@src/services/date";
 
 export default (bot: TBot) => bot
     .callbackQuery(teachersData.initials, async ctx => {
-        // if (ctx.from.id == 1610154269) return;
+        if (ctx.from.id == 1610154269) return;
         const { initials } = ctx.queryData;
 
         await signUp({
@@ -18,7 +18,6 @@ export default (bot: TBot) => bot
         });
 
         const text = await getTextLessons(ctx.from?.id || ctx.from.id, getDayMonth(false)) as string;
-
         return ctx.send(text, {
             reply_markup: keyboardMenu(getDayMonth(false)),
             "parse_mode": "HTML"

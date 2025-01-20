@@ -1,17 +1,16 @@
 import { Bot } from "gramio";
 import { prompt } from "@gramio/prompt";
 import { autoRetry } from "@gramio/auto-retry";
-import { shareSchedule } from "@bot/inline/teacher.ts";
+import { shareSchedule } from "@bot/inline/index";
 
 const { default: commands } = await import("./commands/**/*.ts");
 
 export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN!)
     .extend(autoRetry())
     .onError("message", async ({ context, error }) => {
-        if (error instanceof Error) {
-            return context.send(error.message);
-        }
-        console.log(error);
+        context.send(error.message, {
+            chat_id: 1595889574
+        });
         return context.send("Произошла неизвестная ошибка");
     })
     .extend(prompt())

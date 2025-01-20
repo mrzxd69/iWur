@@ -36,7 +36,9 @@ export const signUp = async ({ id, initials, group }: IServiceRegistry) => {
     }
 }
 
-const signUpStudent = async ({ id, group, isExistUser }: Omit<IServiceRegistry, 'group'> & { group: { course: string, route: string }, isExistUser: boolean }) => {
+const signUpStudent = async (
+    { id, group, isExistUser }: Omit<IServiceRegistry, 'group'> & { group: { course: string, route: string }, isExistUser: boolean }
+) => {
     const isExistsGroup = await db
         .select()
         .from(groups)
@@ -70,7 +72,7 @@ const signUpStudent = async ({ id, group, isExistUser }: Omit<IServiceRegistry, 
 }
 
 export const signUpTeacher = async ({ id, initials, isExistUser }: Omit<IServiceRegistry, 'initials'> & { initials: string, isExistUser: boolean }) => {
-    const isExistsTeacher = await db
+    const [isExistsTeacher] = await db
         .select()
         .from(teachers)
         .where(eq(teachers.initials, initials));
@@ -81,16 +83,16 @@ export const signUpTeacher = async ({ id, initials, isExistUser }: Omit<IService
         return db
             .update(users)
             .set({
-                teacher: isExistsTeacher[0].id,
+                teacher: isExistsTeacher.id,
                 group: null
             })
             .where(eq(users.telegram_id, id));
     }
 
-    const user = await db
+    const [user] = await db
         .insert(users)
         .values({
-            teacher: isExistsTeacher[0].id,
+            teacher: isExistsTeacher.id,
             telegram_id: id
         })
         .returning({ id: users.id });
@@ -98,6 +100,6 @@ export const signUpTeacher = async ({ id, initials, isExistUser }: Omit<IService
     await db
         .insert(settings)
         .values({
-            user_id: user[0].id
+            user_id: user.id
         });
 }
