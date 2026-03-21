@@ -1,6 +1,6 @@
 # Scheduler Bot
 
-TypeScript Telegram Bot для моего колледжа
+TypeScript Telegram Bot для колледжа
 
 
 📆 **Комфортабельный** - Присылает расписание лично Вам
